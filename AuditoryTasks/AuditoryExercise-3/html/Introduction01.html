@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--    Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--    Boostrap CSS-->
+    <link href="../css/bootstrap.css" rel="stylesheet">
+
+    <title>Introduction To Bootstrap 1!</title>
+
+    <style>
+        #grid-system {
+            background-color: cadetblue;
+        }
+
+        #default-container, #container-fluid, #container-breakpoints {
+            background-color: indianred;
+            color: black;
+            text-align: center;
+        }
+
+        #twelve-column-system {
+            background-color: darkblue;
+            color: white;
+            text-align: center;
+        }
+
+        #random-column-system {
+            background-color: blue;
+            color: white;
+            text-align: center;
+        }
+
+        #equal-width-system-two-parts, #equal-width-system-three-parts {
+            background-color: blueviolet;
+            color: white;
+            text-align: center;
+        }
+
+        #setting-col-number-on-a-row-level {
+            background-color: darkgreen;
+            color: white;
+            text-align: center;
+        }
+
+        #vertical-alignment-start {
+            background-color: yellowgreen;
+            color: black;
+            text-align: center;
+            height: 100px;
+        }
+
+        #vertical-alignment-center {
+            background-color: yellow;
+            color: black;
+            text-align: center;
+            height: 100px;
+        }
+
+        #vertical-alignment-end {
+            background-color: greenyellow;
+            color: black;
+            text-align: center;
+            height: 100px;
+        }
+
+        #vertical-alignment-self {
+            background-color: darkorange;
+            color: black;
+            text-align: center;
+            height: 100px;
+        }
+
+        #ordering, #ordering-positions {
+            background-color: darkred;
+            color: white;
+            text-align: center;
+        }
+
+        #display {
+            background-color: deeppink;
+            color: black;
+        }
+
+        #lists {
+            background-color: hotpink;
+            color: black;
+        }
+
+        #text-alignment {
+            background-color: darkgreen;
+            color: lime;
+        }
+
+        #text-style {
+            background-color: black;
+            color: white;
+        }
+
+        #color-properties {
+            background-color: rebeccapurple;
+        }
+    </style>
+</head>
+<body>
+
+<!--============================== CONTAINERS ==============================-->
+
+<div class="container" id="default-container">
+    <h1>Hello World!</h1>
+</div>
+
+<div class="container-fluid" id="container-fluid">
+    <h1>Hello World!</h1>
+</div>
+
+<!--Breakpoints: None,sm, md, lg, xl, xll-->
+<div class="container-md" id="container-breakpoints">
+    <h1>Hello World!</h1>
+</div>
+
+<br/><br/><br/>
+
+<!--============================== GRID SYSTEM ==============================-->
+
+<div class="container" id="grid-system">
+    <div class="row" id="twelve-column-system">
+        <div class="col">One</div>
+        <div class="col">Two</div>
+        <div class="col">Three</div>
+        <div class="col">Four</div>
+        <div class="col">Five</div>
+        <div class="col">Six</div>
+        <div class="col">Seven</div>
+        <div class="col">Eight</div>
+        <div class="col">Nine</div>
+        <div class="col">Ten</div>
+        <div class="col">Eleven</div>
+        <div class="col">Twelve</div>
+    </div>
+
+    <br/><br/><br/>
+
+    <div class="row" id="random-column-system">
+        <div class="col">One</div>
+        <div class="col">Two</div>
+        <div class="col">Three</div>
+        <div class="col-5">Four</div>
+        <div class="col">Nine</div>
+        <div class="col">Ten</div>
+        <div class="col">Eleven</div>
+        <div class="col">Twelve</div>
+    </div>
+
+    <br/><br/><br/>
+
+    <div class="row" id="equal-width-system-two-parts">
+        <div class="col">1 of 2</div>
+        <div class="col">2 of 2</div>
+    </div>
+
+    <br/><br/><br/>
+
+    <!--    ============================== AUTO LAYOUT COLUMNS ==============================-->
+
+    <div class="row" id="equal-width-system-three-parts">
+        <div class="col">1 of 3</div>
+        <div class="col">2 of 3</div>
+        <div class="col">3 of 3</div>
+    </div>
+
+    <br/><br/><br/>
+
+    <div class="row row-cols-3" id="setting-col-number-on-a-row-level">
+        <div class="col">1 of 3</div>
+        <div class="col">2 of 3</div>
+        <div class="col">3 of 3</div>
+        <div class="col">1 of 3</div>
+        <div class="col">2 of 3</div>
+        <div class="col">3 of 3</div>
+    </div>
+
+    <br/><br/><br/>
+
+    <!--        ============================== VERTICAL ALIGNMENTS ==============================-->
+
+    <div class="row align-items-start" id="vertical-alignment-start">
+        <div class="col">1 of 3 (Top)</div>
+        <div class="col">2 of 3 (Top)</div>
+        <div class="col">3 of 3 (Top)</div>
+    </div>
+    <div class="row align-items-center" id="vertical-alignment-center">
+        <div class="col">1 of 3 (Middle)</div>
+        <div class="col">2 of 3 (Middle)</div>
+        <div class="col">3 of 3 (Middle)</div>
+    </div>
+    <div class="row align-items-end" id="vertical-alignment-end">
+        <div class="col">1 of 3 (Bottom)</div>
+        <div class="col">2 of 3 (Bottom)</div>
+        <div class="col">3 of 3 (Bottom)</div>
+    </div>
+    <div class="row" id="vertical-alignment-self">
+        <div class="col align-self-start">1 of 3 (Top)</div>
+        <div class="col align-self-center">2 of 3 (Middle)</div>
+        <div class="col align-self-end">3 of 3 (Bottom)</div>
+    </div>
+
+    <br/><br/><br/>
+
+    <div class="row" id="ordering">
+        <div class="col order-last">First</div>
+        <div class="col">Second</div>
+        <div class="col order-first">Third</div>
+    </div>
+    <div class="row" id="ordering-positions">
+        <div class="col order-1">First</div>
+        <div class="col order-0">Second</div>
+        <div class="col order-3">Third</div>
+        <div class="col order-2">Fourth</div>
+        <div class="col order-5">Fifth</div>
+        <div class="col order-4">Sixth</div>
+    </div>
+</div>
+
+<br/><br/><br/>
+
+<!--============================== TYPOGRAPHY ==============================-->
+
+<div id="display">
+    <h1 class="display-1">Display1</h1>
+    <h1 class="display-2">Display2</h1>
+    <h1 class="display-3">Display3</h1>
+    <h1 class="display-4">Display4</h1>
+    <h1 class="display-5">Display5</h1>
+    <h1 class="display-6">Display6</h1>
+</div>
+
+<br/><br/><br/>
+
+<div id="lists">
+    <ol>
+        <li>First in ordered list!</li>
+        <li>Second in ordered list!</li>
+        <li>Third in ordered list!</li>
+    </ol>
+    <ul>
+        <li>First in unordered list!</li>
+        <li>Second in unordered list!</li>
+        <li>Third in unordered list!</li>
+    </ul>
+    <ul class="list-unstyled">
+        <li>First in unordered list!</li>
+        <li>Second in unordered list!</li>
+        <li>Third in unordered list!</li>
+    </ul>
+    <ul class="list-inline">
+        <li class="list-inline-item">First in unordered list!</li>
+        <li class="list-inline-item">Second in unordered list!</li>
+        <li class="list-inline-item">Third in unordered list!</li>
+    </ul>
+    <dl class="row">
+        <dt class="col-1">Ivan</dt>
+        <dd class="col-11">Pupinoski</dd>
+        <dt class="col-1">FINKI</dt>
+        <dd class="col-11">Faculty of Computer Science and Engeneering</dd>
+    </dl>
+</div>
+
+<br/><br/><br/>
+
+<!--============================== TEXT PROPERTIES ==============================-->
+
+<div id="text-alignment">
+    <p class="text-start">TOP-LEFT!</p>
+    <p class="text-center">MIDDLE!</p>
+    <p class="text-end">BOTTOM_RIGHT!</p>
+
+    <br/><br/><br/>
+
+    <div id="text-style">
+        <p class="fw-bold">BOLD!</p>
+        <p class="fw-bolder">BOLDER!</p>
+        <p class="fw-normal">NORMAL!</p>
+        <p class="fw-light">LIGHT!</p>
+        <p class="fw-lighter">LIGHTER!</p>
+        <p class="fst-italic">ITALIC!</p>
+        <p class="fst-normal">NORMAL!</p>
+    </div>
+</div>
+
+<br/><br/><br/>
+
+<!--============================== COLOR PROPERTIES ==============================-->
+
+<div id="color-properties">
+    <div class="text-primary">One</div>
+    <div class="text-secondary">Two</div>
+    <div class="text-success">Three</div>
+    <div class="text-danger">Four</div>
+    <div class="text-warning">Five</div>
+    <div class="text-info">Six</div>
+    <div class="text-light">Seven</div>
+    <div class="text-dark">Eight</div>
+    <div class="text-muted">Nine</div>
+    <div class="text-white bg-dark">Ten</div>
+</div>
+
+<br/><br/><br/>
+
+<div>
+    <div class="bg-primary text-white">One</div>
+    <div class="bg-secondary text-white">Two</div>
+    <div class="bg-success text-white">Three</div>
+    <div class="bg-danger text-white">Four</div>
+    <div class="bg-warning text-dark">Five</div>
+    <div class="bg-info text-white">Six</div>
+    <div class="bg-light text-dark">Seven</div>
+    <div class="bg-dark text-white">Eight</div>
+    <div class="bg-white text-dark">Nine</div>
+</div>
+
+<br/><br/><br/>
+
+<!--============================== TABLES ==============================-->
+
+<table class="table">
+    <tr>
+        <th>FINKI</th>
+        <th>FINKI</th>
+        <th>FINKI</th>
+        <th>FINKI</th>
+        <th>FINKI</th>
+    </tr>
+    <tr>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+    </tr>
+</table>
+
+<table class="table table-dark">
+    <tr>
+        <th>FINKI</th>
+        <th>FINKI</th>
+        <th>FINKI</th>
+        <th>FINKI</th>
+        <th>FINKI</th>
+    </tr>
+    <tr>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+    </tr>
+</table>
+
+<table class="table table-bordered">
+    <tr>
+        <th>FINKI</th>
+        <th>FINKI</th>
+        <th>FINKI</th>
+        <th>FINKI</th>
+        <th>FINKI</th>
+    </tr>
+    <tr>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+    </tr>
+</table>
+
+<table class="table table-hover table-success">
+    <thead>
+    <tr>
+        <th>FINKI</th>
+        <th>FINKI</th>
+        <th>FINKI</th>
+        <th>FINKI</th>
+        <th>FINKI</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+    </tr>
+    </tbody>
+</table>
+
+<table class="table table-striped table-striped-columns table-info">
+    <tr>
+        <th>FINKI</th>
+        <th>FINKI</th>
+        <th>FINKI</th>
+        <th>FINKI</th>
+        <th>FINKI</th>
+    </tr>
+    <tr>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+    </tr>
+</table>
+
+<table class="table table-bordered">
+    <tr>
+        <th class="bg-primary">FINKI</th>
+        <th class="bg-secondary">FINKI</th>
+        <th class="bg-success">FINKI</th>
+        <th class="bg-warning">FINKI</th>
+        <th class="bg-danger">FINKI</th>
+        <th class="bg-info">FINKI</th>
+        <th class="bg-success-subtle">FINKI</th>
+        <th class="bg-warning-subtle">FINKI</th>
+        <th class="bg-danger-subtle">FINKI</th>
+        <th class="bg-info-subtle">FINKI</th>
+    </tr>
+    <tr>
+        <td class="table-active">Faculty of Computer Science and Engeneering</td>
+        <td class="table-primary">Faculty of Computer Science and Engeneering</td>
+        <td class="table-secondary">Faculty of Computer Science and Engeneering</td>
+        <td class="table-success">Faculty of Computer Science and Engeneering</td>
+        <td class="table-danger">Faculty of Computer Science and Engeneering</td>
+        <td class="table-warning">Faculty of Computer Science and Engeneering</td>
+        <td class="table-info">Faculty of Computer Science and Engeneering</td>
+        <td class="table-light">Faculty of Computer Science and Engeneering</td>
+        <td class="table-dark">Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+    </tr>
+    <tr class="table-active">
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+    </tr>
+    <tr class="table-primary">
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+    </tr>
+    <tr class="table-secondary">
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+    </tr>
+    <tr class="table-success">
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+    </tr>
+    <tr class="table-danger">
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+    </tr>
+    <tr class="table-warning">
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+    </tr>
+    <tr class="table-info">
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+    </tr>
+    <tr class="table-light">
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+    </tr>
+    <tr class="table-dark">
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+        <td>Faculty of Computer Science and Engeneering</td>
+    </tr>
+</table>
+
+<!--    Bootstrap Bundle with Propper-->
+<script src="../js/bootstrap.bundle.js"></script>
+</body>
+</html>
