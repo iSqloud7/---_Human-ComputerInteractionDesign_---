@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'bootstrap/css/bootstrap.css' %}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+        .projects-header {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        #submenu li {
+            padding-bottom: 10px;
+            border-bottom: 2px solid darkgray;
+        }
+
+        #submenu li:first-child {
+            border-bottom: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
+        <div class="container">
+            <img src="{% static 'logo.png' %}" width="10%" alt="Logo">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contacts</a></li>
+                    <li class="nav-item"><a class="btn btn-dark" href="#">Contact us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="container hero">
+        <div>
+            <h1 class="display-4">Architecture <br><span class="text-muted">Bureau</span></h1>
+        </div>
+        <div>
+            <img src="{% static 'house3.jpg' %}" alt="Modern House" class="img-fluid">
+        </div>
+    </div>
+
+    <!-- Feature Section -->
+    <div class="container mt-5">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <img src="{% static 'house4.jpg' %}" alt="House Feature" class="img-fluid">
+            </div>
+            <div class="col-md-3">
+                <p class="text-muted">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Tincidunt vitae semper quis lectus nulla at volutpat. Amet mauris commodo
+                    quis imperdiet.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Projects Header -->
+    <div class="projects-header">
+        <h2 class="fw-bold mt-5 mb-5">We offer a variety of projects</h2>
+    </div>
+
+    <!-- Submenu -->
+    <div class="container tabs-container mb-5">
+        <ul id="submenu" class="row list-unstyled text-center">
+            <li class="col-4">All houses</li>
+            <li class="col-4 text-muted">Store houses</li>
+            <li class="col-4 text-muted">Frame houses</li>
+        </ul>
+    </div>
+
+    <!-- Cards Section -->
+    <div class="container cards">
+        <div class="row">
+            {% for house in houses %}
+            <div class="card col-4">
+                <img src="{{ house.house.image.url }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ house.house.name }}</h5>
+                    <div class="d-flex justify-content-between">
+                        <span class="card-text">Area:</span>
+                        <span class="card-text">{{ house.house.area }}sqm</span>
+                    </div>
+                    <hr>
+                    <div class="d-flex justify-content-between mb-3">
+                        <span class="card-text">Price:</span>
+                        <span class="card-text">${{ house.price }}</span>
+                    </div>
+                    <a href="{% url 'edit' house.house.id %}" class="btn btn-dark">Edit</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+
+</html>

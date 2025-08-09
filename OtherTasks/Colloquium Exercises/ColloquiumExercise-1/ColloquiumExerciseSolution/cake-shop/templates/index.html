@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="row bg-danger p-5">
+        <div class="col p-5">
+            <h1 class="text-light">Explore the wonderland of tastes!</h1>
+            <p class="text-light">Assignments for HCI Exam in January 2025</p>
+            <div class="d-flex">
+                <button class="btn btn-light">Get Started</button>
+                <button class="btn btn-outline-light ms-3">Get Started</button>
+            </div>
+        </div>
+        <div class="col">
+            <img src="{% static 'main.png' %}" style="width: 450px; height: 300px"/>
+        </div>
+    </div>
+    <div class="row bg-secondary-subtle justify-content-center p-5">
+        <p class="fs-4 w-75 text-center">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur corporis doloribus facere laudantium provident repudiandae sint temporibus! Assumenda error et, incidunt maxime nobis obcaecati.
+        </p>
+        <p class="text-center fw-bold mt-2">
+            John Doe / CEO, Cakery&Bakery
+        </p>
+    </div>
+
+    <div class="row p-5">
+        <p class="fs-5 text-danger fw-bold text-center">Products</p>
+        <p class="text-secondary text-center">Add more products in the edit form</p>
+    </div>
+
+    <div class="row">
+    {% for cake in cakes %}
+        <div class="col-4 px-5">
+        <div class="card">
+          <img src="{{ cake.image.url }}" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{ cake.name }}</h5>
+            <p class="card-text">{{ cake.description }}</p>
+            <p>{{ cake.baker }}</p>
+          </div>
+        </div>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}

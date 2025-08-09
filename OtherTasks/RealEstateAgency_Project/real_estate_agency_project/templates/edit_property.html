@@ -1,0 +1,28 @@
+{% block content %}
+<h2>Edit Property: {{ property_obj.name }}</h2>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    {% if property_obj.agents.exists %}
+        <h4>Current Agents:</h4>
+        <ul>
+            {% for agent in property_obj.agents.all %}
+                <li>{{ agent.name }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    {% if property_obj.features.exists %}
+        <h4>Current Features:</h4>
+        <ul>
+            {% for feature in property_obj.features.all %}
+                <li>{{ feature.name }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <button type="submit">Save Changes</button>
+</form>
+{% endblock %}

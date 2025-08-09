@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book List</title>
+</head>
+<body>
+
+<h2>Recent books:</h2>
+<ul>
+    {% for book in books %}
+        <li>{{ book.title }} ({{ book.publisher_year }})</li>
+        {% empty %}
+        <li>No recent book found.</li>
+    {% endfor %}
+</ul>
+<h2>Total books: {{ total_books }}</h2>
+<h2>Average of books: {{ avg_books.average_year }}</h2>
+
+</body>
+</html>

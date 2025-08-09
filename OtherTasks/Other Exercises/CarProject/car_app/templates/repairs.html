@@ -1,0 +1,103 @@
+<head>
+    <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <style>
+
+        .container-fluid{
+            position: relative;
+            width: 1000px;
+        }
+    .container-fluid .overlay-text {
+            position: absolute;
+            width: 100%;
+            left: 10%;
+        }
+    .h2-1 {
+            top: 20%;
+        }
+        .h2-2 {
+            top: 30%;
+        }
+        .p-1{
+            top: 40%;
+            font-weight: bold;
+        }
+        .p-2{
+            top: 45%;
+            font-weight: bold;
+        }
+        .btn-cover.overlay-text{
+            position: absolute;
+            top: 55%;
+            width: 20%;
+        }
+
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">Home</a>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Repairs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Manufacturer</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">About Us</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="page bg-body-tertiary">
+<div class="container-fluid p-0">
+    <img src="https://th.bing.com/th/id/OIP.2LTvYSzczRBDwMrGQUMyFwHaE8?w=2560&h=1707&rs=1&pid=ImgDetMain" alt="..." height="500px;" width="1000px;">
+    <h2 class="overlay-text h2-1 text-white">HONEST, QUALITY WORK</h2>
+    <h2 class="overlay-text h2-2 text-white">AT AFFORDABLE PRICES</h2>
+    <p class="overlay-text p-1 text-white">We provide top-notch service for import and domestic car repairs. Service Brakes,</p>
+    <p class="overlay-text p-2 text-white">Exhaust, Tune Ups, Engine Repairs, Electrical and A.C Systems.</p>
+    <button class="btn btn-primary overlay-text btn-cover">GET FREE QUOTES</button>
+</div>
+<br>
+{% block content %}
+    <div id="cards" class="container">
+
+       <div class="row">
+      {% for repair in repairs %}
+
+       <div class="col-4">
+		<div class="card">
+                <img src="{{ MEDIA_URL }}{{ repair.problem_image.url }}" class="card-img-top" alt="...">
+                <div class="card-body bg-dark text-white">
+                    <h5 class="card-title">{{ repair.problem_desc}}</h5>
+                    <p class="card-text">{{  repair.car.car_type }}</p>
+                    <p class="card-text">Some quick explanation of the problem</p>
+                    <button class="btn btn-outline-danger bi bi-wrench-adjustable"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-wrench-adjustable" viewBox="0 0 16 16">
+                        <path d="M16 4.5a4.5 4.5 0 0 1-1.703 3.526L13 5l2.959-1.11q.04.3.041.61"></path>
+                        <path d="M11.5 9c.653 0 1.273-.139 1.833-.39L12 5.5 11 3l3.826-1.53A4.5 4.5 0 0 0 7.29 6.092l-6.116 5.096a2.583 2.583 0 1 0 3.638 3.638L9.908 8.71A4.5 4.5 0 0 0 11.5 9m-1.292-4.361-.596.893.809-.27a.25.25 0 0 1 .287.377l-.596.893.809-.27.158.475-1.5.5a.25.25 0 0 1-.287-.376l.596-.893-.809.27a.25.25 0 0 1-.287-.377l.596-.893-.809.27-.158-.475 1.5-.5a.25.25 0 0 1 .287.376M3 14a1 1 0 1 1 0-2 1 1 0 0 1 0 2"></path>
+</svg>Fix</button>
+      </div>
+    </div>
+
+       </div>
+            {% endfor %}
+       </div>
+
+    </div>
+
+    <form action="{% url 'repairs' %}" method="post" class="col-4" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{  form.as_p }}
+    <input type="submit" value="Submit">
+    </form>
+{% endblock %}
+</div>
+</body>
